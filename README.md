@@ -1,8 +1,8 @@
-** What it is
+# What it is
 
 It is a docker container with visual-studio-code and typescript.
 
-** Requirements
+# Requirements
 
 - Docker installed
 
@@ -10,7 +10,7 @@ Suggested:
 
 - SO Ubuntu: the file `visual-studio-code-docker.sh` is tested on ubuntu 16.04.
 
-** How use it
+# How use it
 
 If you are able to use docker, you can use the directly build the container with `visual-studio-code/Dockerfile`.
 
