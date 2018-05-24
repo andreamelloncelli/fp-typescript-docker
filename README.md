@@ -8,7 +8,7 @@ It is a docker container with visual-studio-code and typescript.
 
 Suggested:
 
-- SO Ubuntu: the file `visual-studio-code-docker.sh` is tested on ubuntu 16.04.
+- SO Ubuntu: the file `visual-studio-code-docker.sh` has been tested on ubuntu 16.04.
 
 # How use it
 
