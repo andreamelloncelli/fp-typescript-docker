@@ -29,3 +29,8 @@ Otherwise:
 		./visual-studio-code-docker.sh stop
 
 
+Please notice that the only folder shared with your computer is `~/dev`. So put your code into it or modify the line
+
+	SHARED_FOLDER="$HOME/dev"
+
+in `visual-studio-code-docker.sh`. Restart container if necessary.
