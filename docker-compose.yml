@@ -1,0 +1,45 @@
+version: '3.5'
+
+# usage: UID=${UID} GID=${GID} docker-compose up
+
+services:
+  # apache:
+  #   image: 'bitnami/apache:latest'
+  #   user: "0:0"
+  #   ports:
+  #     - '80:80'
+  #     - '443:443'
+  #   networks:
+  #     - sp-net
+  #   volumes:
+  #     - ./config/apache/httpd.conf:/opt/bitnami/apache/conf/httpd.conf:ro
+  #     - ./config/apache/r-ssl.conf:/vhosts/my_vhost.conf:ro
+  #     - ./config/ssl:/etc/ssl:ro
+  #   environment:
+  #     - APACHE_HTTP_PORT_NUMBER=80
+  #     - APACHE_HTTPS_PORT_NUMBER=443
+
+# docker run --rm --name visual-studio-code-container -e DISPLAY  -e XAUTHORITY=/root/.Xauthority  -v /tmp/.X11-unix:/tmp/.X11-unix    -v $HOME/.Xauthority:/root/.Xauthority       -v $HOME/dev/:/root/hostfolder --net=host visual-studio-code
+
+
+  visual-studio-code:
+    build: ./visual-studio-code/.
+    image: visual-studio-code
+    user: "${UID}:${GID}"
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix \
+      - $HOME/.Xauthority:/root/.Xauthority \
+      - $HOME/dev/learnTypeScript/:/root/hostfolder \
+    # volumes:
+    #   - /tmp/.X11-unix:/tmp/.X11-unix \
+    #   - $HOME/.Xauthority:$D_HOME/.Xauthority \
+    #   - $SHARED_FOLDER:$D_HOME/hostfolder \
+    ports:
+      - 8000:8000
+    environment:
+      - DISPLAY
+
+# networks:
+#   sp-net:
+
+
